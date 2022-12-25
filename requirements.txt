@@ -1,0 +1,15 @@
+autopep8==2.0.1
+beautifulsoup4==4.11.1
+bs4==0.0.1
+certifi==2022.12.7
+charset-normalizer==2.1.1
+idna==3.4
+pyaes==1.6.1
+pycodestyle==2.10.0
+Pyrogram==2.0.70
+PySocks==1.7.1
+requests==2.28.1
+soupsieve==2.3.2.post1
+TgCrypto==1.2.5
+tomli==2.0.1
+urllib3==1.26.13

@@ -1,0 +1,2 @@
+from . import start
+start()
