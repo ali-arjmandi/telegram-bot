@@ -16,10 +16,10 @@ urls = {
 }
 
 images = {
-    'ass': '',
-    'boob': '',
-    'pussy': '',
-    'dick': '',
+    'ass': [],
+    'boob': [],
+    'pussy': [],
+    'dick': [],
 }
 
 try:
