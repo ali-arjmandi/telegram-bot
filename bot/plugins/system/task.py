@@ -18,12 +18,12 @@ async def upTime(_, message: types.Message):
 
 
 async def info(client: Client, message: types.Message):
+    await message.delete()
     replied_user = message.reply_to_message.from_user
     id = replied_user.id
     full_name = f'{replied_user.first_name} {replied_user.last_name}'
     username = replied_user.username
     await client.send_message("me", f'ID: {id}\nname: {full_name}'+(f'\nusername: @{username}' if username else ''))
-    await message.delete()
 
 
 async def help(_, message: types.Message):
