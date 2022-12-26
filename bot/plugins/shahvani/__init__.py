@@ -7,17 +7,17 @@ handlers = [
     (getDepth, filters.me & filters.text & filters.command(
         'sh_depth'), 'show page depth when scrap shahvani.com'),
     (getBoob, filters.incoming & filters.private & filters.text &
-     filters.command('ممه', prefixes='')),
+     filters.regex('ممه')),
     (getAss, filters.incoming & filters.private &
-     filters.text & filters.command('کون', prefixes='')),
+     filters.text & filters.regex('کون')),
     (getPussy, filters.incoming & filters.private & filters.text &
-     filters.regex('^(کس|کص)$')),
+     filters.regex('^ک(س|ص)$')),
     (getDick, filters.incoming & filters.private & filters.text &
-     filters.command('کیر', prefixes='')),
+     filters.regex('کیر')),
     (getAnal, filters.incoming & filters.private & filters.text &
-     filters.command('آنال', prefixes='')),
+     filters.regex('آنال')),
     (getLesbian, filters.incoming & filters.private & filters.text &
-     filters.command('لزبین', prefixes='')),
+     filters.regex('لزبین')),
     (getShemale, filters.incoming & filters.private & filters.text &
-     filters.command('شیمیل', prefixes='')),
+     filters.regex('شیمیل')),
 ]
