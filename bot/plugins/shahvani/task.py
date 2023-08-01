@@ -1,5 +1,6 @@
 from pyrogram import types
 from bs4 import BeautifulSoup
+import asyncio
 import requests
 import pickle
 from random import choice
@@ -71,65 +72,14 @@ async def scrap(_, message: types.Message):
         pickle.dump(images, file)
     await message.reply('done')
 
+def getMedia(_, message: types.Message, category: str):
+    item = choice(images[category])
+    asyncio.run(sendMedia(message, item[0], item[1]))
 
-async def getBoob(_, message: types.Message):
-    item = choice(images['boob'])
-    ext = item[0].split('.')[-1]
+
+async def sendMedia(message: types.Message, url: str, caption: str):
+    ext = url.split('.')[-1]
     if ext == 'gif':
-        await message.reply_animation('https://shahvani.com'+item[0], caption=item[1])
+        await message.reply_animation('https://shahvani.com'+url, caption=caption)
         return
-    await message.reply_photo('https://shahvani.com'+item[0], caption=item[1])
-
-
-async def getAss(_, message: types.Message):
-    item = choice(images['ass'])
-    ext = item[0].split('.')[-1]
-    if ext == 'gif':
-        await message.reply_animation('https://shahvani.com'+item[0], caption=item[1])
-        return
-    await message.reply_photo('https://shahvani.com'+item[0], caption=item[1])
-
-
-async def getPussy(_, message: types.Message):
-    item = choice(images['pussy'])
-    ext = item[0].split('.')[-1]
-    if ext == 'gif':
-        await message.reply_animation('https://shahvani.com'+item[0], caption=item[1])
-        return
-    await message.reply_photo('https://shahvani.com'+item[0], caption=item[1])
-
-
-async def getDick(_, message: types.Message):
-    item = choice(images['dick'])
-    ext = item[0].split('.')[-1]
-    if ext == 'gif':
-        await message.reply_animation('https://shahvani.com'+item[0], caption=item[1])
-        return
-    await message.reply_photo('https://shahvani.com'+item[0], caption=item[1])
-
-
-async def getAnal(_, message: types.Message):
-    item = choice(images['anal'])
-    ext = item[0].split('.')[-1]
-    if ext == 'gif':
-        await message.reply_animation('https://shahvani.com'+item[0], caption=item[1])
-        return
-    await message.reply_photo('https://shahvani.com'+item[0], caption=item[1])
-
-
-async def getLesbian(_, message: types.Message):
-    item = choice(images['lesbian'])
-    ext = item[0].split('.')[-1]
-    if ext == 'gif':
-        await message.reply_animation('https://shahvani.com'+item[0], caption=item[1])
-        return
-    await message.reply_photo('https://shahvani.com'+item[0], caption=item[1])
-
-
-async def getShemale(_, message: types.Message):
-    item = choice(images['shemale'])
-    ext = item[0].split('.')[-1]
-    if ext == 'gif':
-        await message.reply_animation('https://shahvani.com'+item[0], caption=item[1])
-        return
-    await message.reply_photo('https://shahvani.com'+item[0], caption=item[1])
+    await message.reply_photo('https://shahvani.com'+url, caption=caption)
