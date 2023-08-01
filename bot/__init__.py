@@ -1,7 +1,13 @@
 from pyrogram import Client
 from bot import handlers
+from dotenv import load_dotenv
+from os.path import join, dirname
+import os
 
-app = Client("bot", api_id=0, api_hash='', phone_number='')
+dotenv_path = join(dirname(__file__), '../.env')
+load_dotenv(dotenv_path)
+
+app = Client("bot", api_id=int(os.getenv('API_ID')), api_hash=os.getenv('API_HASH'), bot_token=os.getenv('BOT_TOKEN'))
 
 
 def start():
